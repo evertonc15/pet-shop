@@ -97,4 +97,17 @@ public class ProductService {
 
     }
 
+    public ResponseDTO delete(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException(PRODUCT_404_MESSAGE));
+
+        productRepository.delete(product);
+
+        return ResponseDTO.builder()
+                .message(PRODUCT_200_DELETED_MESSAGE)
+                .statusHttp(PRODUCT_200_STATUS)
+                .build();
+
+    }
+
 }

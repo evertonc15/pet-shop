@@ -14,7 +14,5 @@ public class ProductConstants {
 
     public static final int PRODUCT_200_STATUS = 200;
     public static final int PRODUCT_201_STATUS = 201;
-    public static final int PRODUCT_400_STATUS = 400;
-    public static final int PRODUCT_404_STATUS = 404;
 
 }
