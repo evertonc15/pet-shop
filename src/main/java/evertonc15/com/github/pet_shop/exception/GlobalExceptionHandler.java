@@ -44,12 +44,12 @@ public class GlobalExceptionHandler {
                 );
     }
 
+    @ExceptionHandler(Exception.class)
     public ResponseEntity<ResponseDTO> handleGenericException(Exception ex) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(ResponseDTO.builder()
-                        .message(ex.getMessage())
                         .statusHttp(HttpStatus.INTERNAL_SERVER_ERROR.value())
-                        .build()
-                );
+                        .message("Erro inesperado: " + ex.getMessage())
+                        .build());
     }
 }

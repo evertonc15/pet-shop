@@ -20,7 +20,7 @@ public class ProductDTO {
     private String description;
 
     @NotNull(message = "O preço é obrigatório.")
-    @DecimalMin(value = "0,01", message = "O preço deve ser maior que zero.")
+    @DecimalMin(value = "0.01", message = "O preço deve ser maior que zero.")
     private BigDecimal price;
 
     @NotBlank(message = "O fabricante é obrigatório.")
